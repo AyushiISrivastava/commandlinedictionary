@@ -5,21 +5,23 @@ var antonyms=controller.antonyms;
 var example=controller.example;
 var randomWord=controller.wordOfDay;
 var wordAllDetails=controller.wordAllDetails;
-
+var wordplay=controller.wordPlay;
 
 module.exports =function endpoints(app){
-	app.route("/dictsynonym/:word")
+	app.route("/dictsyn/:word")
 		.get(synonyms);
-	app.route("/dictdefinition/:word")
+	app.route("/dictdef/:word")
 		.get(definition);
-	app.route("/dictantonym/:word")
+	app.route("/dictant/:word")
 		.get(antonyms);
-	app.route("/dictexample/:word")
+	app.route("/dictex/:word")
 		.get(example);
 	app.route("/dict")
 		.get(randomWord);
-	app.route("/dictall/:word")
+	app.route("/dict/:word")
 		.get(wordAllDetails);
+	app.route("/dictplay")
+		.get(wordplay);
 }
 
 
